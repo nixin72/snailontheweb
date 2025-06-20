@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Lil Lemon Snails</title>
+
+
+  <style>
+    :root {
+      --content-width: 70%;
+      --bg-body: rgb(254, 197, 119);
+      --bg-head: rgb(108, 152, 15);
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-body);
+      margin: 0;
+    }
+
+    header {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      background: var(--bg-head);
+      color: white;
+    }
+
+    header>div {
+      width: var(--content-width);
+    }
+
+    header .logo {
+      border-radius: 500px;
+      border: thick solid white;
+      margin: 15px;
+      width: 100px;
+      height: 100px;
+    }
+
+    header a {
+      margin: 5px 0;
+    }
+
+    footer {
+      width: 100%;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    footer .content {
+      width: var(--content-width);
+      align-self: center;
+      margin-bottom: -20px;
+    }
+
+    footer .background {
+      height: 100px;
+      width: 100%;
+      background-image: url("static/grass-t.png");
+      background-repeat: repeat-x;
+      background-size: contain;
+    }
+
+    .round {
+      border-radius: 500px;
+    }
+
+    .vert {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .horz {
+      display: flex;
+      flex-direction: row;
+    }
+
+    a {
+      display: flex;
+      align-content: center;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a img {
+      margin-right: 5px;
+      width: 20px;
+      height: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="vert">
+      <div class="horz">
+        <img class="logo" src="static/logo.png" />
+        <div>
+          <h1 style="align-self: center;">Lil Lemon Snails</h1>
+          <nav>
+            <a href="#">Animation</a>
+            <a href="#">Illustration</a>
+            <a href="#">Merch</a>
+          </nav>
+        </div>
+      </div>
+      <nav class="socials">
+        <a href="https://www.instagram.com/lil.lemon.snails/">
+          <img src="static/ig.png" />@lil.lemon.snails
+        </a>
+        <a href="https://www.tumblr.com/lil-lemon-snails">
+          <img src="static/tumblr.png" />@lil-lemon-snails
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="body" style="display: flex; justify-content: center; align-items: center; margin-top: 20%">
+    still going... still growing...
+  </section>
+
+  <footer>
+    <div class="content">
+      <p>Copyright 2025 @ Salem Preusser</p>
+      <p>lillemonsnails@gmail.com</p>
+    </div>
+    <div class="background"></div>
+  </footer>
+</body>
+
+</html>
