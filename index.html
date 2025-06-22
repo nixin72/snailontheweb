@@ -4,7 +4,83 @@
 <head>
   <title>Lil Lemon Snails</title>
 
+  <!--
+    Styles for the speech bubble - separated cause it's special
+    Source: https://codepen.io/quatmo/pen/jVoXQe
+  -->
+  <style>
+    .bubble {
+      display: inline-block;
+      position: relative;
+      padding: 30px 40px;
+      background: white;
+      font-family: "Permanent Marker";
+      clear: both;
 
+      /**
+       * This helps give the border that sort of "hand drawn" look
+       * Source: https://codemyui.com/hand-drawn-border-buttons-css/
+       */
+      border-top-left-radius: 255px 15px;
+      border-top-right-radius: 15px 225px;
+      border-bottom-right-radius: 225px 15px;
+      border-bottom-left-radius: 15px 255px;
+      border: solid 8px #41403E;
+    }
+
+    .bubble:before {
+      content: "";
+      position: absolute;
+      bottom: -50px;
+      height: 50px;
+      width: 90px;
+    }
+
+    .bubble.right {
+      float: right;
+      /*margin: 10px 10px 60px 100px;*/
+    }
+
+    .bubble.right:before {
+      border-radius: 0 0 0 100%;
+      box-shadow:
+        /* bottom line */
+        2px -8px 0 0 #41403E inset,
+        /* white "inner" part */
+        23px 0 0 0 #fff inset,
+        /* top line */
+        25px -8px 0 0 #41403E inset;
+      right: 0;
+    }
+  </style>
+  <!--
+    Styles for the lines coming out of speech bubble - separated cause it's special
+  -->
+  <style>
+    .deco>div {
+      width: 7rem;
+      height: 3px;
+      margin: 2.5rem 0;
+      border-top-left-radius: 128px 15px;
+      border-top-right-radius: 15px 128px;
+      border-bottom-right-radius: 128px 15px;
+      border-bottom-left-radius: 15px 128px;
+      border: solid 4px #41403E;
+    }
+
+    .deco .fs {
+      transform: rotate(-20deg);
+    }
+
+    .deco .bs {
+      transform: rotate(20deg);
+    }
+  </style>
+  <!--
+  ------------------------------------------------------------------------------
+  ----- Main CSS for the actual page -------------------------------------------
+  ------------------------------------------------------------------------------
+  -->
   <style>
     :root {
       --content-width: 70%;
@@ -12,59 +88,84 @@
       --bg-head: rgb(108, 152, 15);
     }
 
+    html {
+      background: var(--bg-body);
+      display: flex;
+      flex-direction: column;
+      width: 100vw;
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
+
     body {
       display: flex;
       flex-direction: column;
-      background: var(--bg-body);
       margin: 0;
+      width: 70%;
+      height: 100vh;
+      align-self: center;
+      background: var(--bg-body);
     }
 
     header {
-      width: 100%;
+      min-height: 15rem;
+      height: 15rem;
+      max-height: 15rem;
+      background-image: url("static/banner.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: white;
+      padding-bottom: 20px;
+    }
+
+    header img {
+      height: fit-content;
+    }
+
+    main {
+      margin: 1rem;
+      width: 60%;
       display: flex;
+      flex-direction: column;
       justify-content: center;
-      align-content: center;
-      background: var(--bg-head);
-      color: white;
+      align-items: center;
+      align-self: center;
     }
 
-    header>div {
-      width: var(--content-width);
+    main>section {
+      align-self: center;
     }
 
-    header .logo {
-      border-radius: 500px;
-      border: thick solid white;
-      margin: 15px;
-      width: 100px;
-      height: 100px;
+    main .links {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
     }
 
-    header a {
-      margin: 5px 0;
+    main .links>div {
+      margin: 0 1.5rem;
+    }
+
+    main nav a {
+      margin: 0.5rem;
+    }
+
+    main .snail {
+      margin-top: -50px;
+      margin-right: -175px;
     }
 
     footer {
       width: 100%;
-      position: fixed;
-      left: 0;
-      bottom: 0;
       display: flex;
       flex-direction: column;
+      background-color: var(--bg-head);
     }
 
     footer .content {
       width: var(--content-width);
       align-self: center;
-      margin-bottom: -20px;
-    }
-
-    footer .background {
-      height: 100px;
-      width: 100%;
-      background-image: url("static/grass-t.png");
-      background-repeat: repeat-x;
-      background-size: contain;
     }
 
     .round {
@@ -89,48 +190,54 @@
     }
 
     a img {
-      margin-right: 5px;
-      width: 20px;
-      height: 20px;
+      width: 100px;
+      height: 100px;
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <div class="vert">
-      <div class="horz">
-        <img class="logo" src="static/logo.png" />
-        <div>
-          <h1 style="align-self: center;">Lil Lemon Snails</h1>
-          <nav>
-            <a href="#">Animation</a>
-            <a href="#">Illustration</a>
-            <a href="#">Merch</a>
-          </nav>
-        </div>
-      </div>
-      <nav class="socials">
-        <a href="https://www.instagram.com/lil.lemon.snails/">
-          <img src="static/ig.png" />@lil.lemon.snails
-        </a>
-        <a href="https://www.tumblr.com/lil-lemon-snails">
-          <img src="static/tumblr.png" />@lil-lemon-snails
-        </a>
-      </nav>
-    </div>
-  </header>
+  <header></header>
 
-  <section class="body" style="display: flex; justify-content: center; align-items: center; margin-top: 20%">
-    still going... still growing...
-  </section>
+  <main>
+    <section class="links horz">
+      <div class="deco">
+        <div class="bs"></div>
+        <div class="-"></div>
+        <div class="fs"></div>
+      </div>
+      <div>
+        <nav class="bubble right vert drawn" style="align-items: center;">
+          <a href="https://www.instagram.com/lil.lemon.snails/">
+            <img src="static/ig.png" />
+          </a>
+          <a href="https://www.tumblr.com/lil-lemon-snails">
+            <img src="static/tumblr.png" />
+          </a>
+          <a href="https://ko-fi.com/lillemonsnails">
+            <img src="static/kofi.png" />
+          </a>
+        </nav>
+      </div>
+      <div class="deco">
+        <div class="fs"></div>
+        <div class="-"></div>
+        <div class="bs"></div>
+      </div>
+    </section>
+    <section class="snail">
+      <img src="static/snomputer.png" width="300" />
+    </section>
+  </main>
 
   <footer>
     <div class="content">
+      <div class="horz" style="align-items: center;">
+        <img src="static/email.png" width="20" style="margin-right: 5px" />
+        <p>Reach me at lil.lemon.snails@gmail.com</p>
+      </div>
       <p>Copyright 2025 @ Salem Preusser</p>
-      <p>lil.lemon.snails@gmail.com</p>
     </div>
-    <div class="background"></div>
   </footer>
 </body>
 
