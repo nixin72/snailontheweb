@@ -77,8 +77,6 @@
       right: 0;
     }
 
-    /* END: styles for the speech bubbles */
-
     /**
      * *************************************************************************
      * *** START: Styles for the lines coming out of speech bubble
@@ -86,7 +84,9 @@
      */
     .deco>div {
       width: 3.5rem;
+      height: 0;
       margin: 2rem 0;
+      background-color: var(--border-color);
       /* We do the same thing as above to try and give them a sort of "hand drawn" effect */
       border-top-left-radius: 128px 15px;
       border-top-right-radius: 15px 128px;
@@ -214,7 +214,6 @@
     }
 
     a {
-      display: flex;
       align-content: center;
       color: inherit;
       text-decoration: none;
@@ -234,33 +233,35 @@
     @media only screen and (min-width: 481px) {
       body {
         width: 100vw;
-        font-size: 2.5rem;
+        font-size: 2.0rem;
       }
 
       a img {
-        width: 250px;
-        height: 250px;
+        width: 125px;
+        height: 125px;
       }
 
       .bubble {
-        border-width: 1.5rem;
+        padding: 30px 40px;
+        border-width: 1.0rem;
       }
 
       .deco>div {
-        border-width: 1rem;
+        width: 6rem;
+        border-width: 0.7rem;
       }
 
       .bubble:before {
-        bottom: -100px;
-        height: 100px;
+        bottom: -80px;
+        height: 80px;
         width: 90px;
       }
 
       .bubble.right:before {
         box-shadow:
-          0px -1.5rem 0 0 var(--border-color) inset,
+          0px -1.0rem 0 0 var(--border-color) inset,
           40px 0 0 0 #fff inset,
-          40px -1.5rem 0 0 var(--border-color) inset;
+          40px -1.0rem 0 0 var(--border-color) inset;
       }
 
       header img {
@@ -272,10 +273,14 @@
         width: 100%;
       }
 
+      main .links>div {
+        margin: 0 2.0rem;
+      }
+
       main .snail {
-        width: 500px;
-        margin-top: -80px;
-        margin-right: -175px;
+        width: 350px;
+        margin-top: -50px;
+        margin-right: -250px;
       }
 
       footer .content {
@@ -293,23 +298,23 @@
     }
 
     /*** Laptops ***/
-    @media only screen and (min-width: 1025px) {
+    @media only screen and (min-width: 1200px) {
       body {
         width: 100vw;
-        font-size: 2.5rem;
+        font-size: 2rem;
       }
 
       a img {
-        width: 250px;
-        height: 250px;
+        width: 125px;
+        height: 125px;
       }
 
       .bubble {
-        border-width: 1.5rem;
+        border-width: 1.0rem;
       }
 
       .deco>div {
-        border-width: 1rem;
+        border-width: 0.6rem;
       }
 
       .bubble:before {
@@ -320,14 +325,19 @@
 
       .bubble.right:before {
         box-shadow:
-          0px -1.5rem 0 0 var(--border-color) inset,
+          0px -1.0rem 0 0 var(--border-color) inset,
           40px 0 0 0 #fff inset,
-          40px -1.5rem 0 0 var(--border-color) inset;
+          40px -1.0rem 0 0 var(--border-color) inset;
+      }
+
+      header {
+        display: flex;
+        justify-content: center;
       }
 
       header img {
         height: auto;
-        width: 100%;
+        width: 50%;
       }
 
       main {
@@ -335,9 +345,9 @@
       }
 
       main .snail {
-        width: 500px;
-        margin-top: -80px;
-        margin-right: -175px;
+        width: 400px;
+        margin-top: -30px;
+        margin-right: -225px;
       }
 
       footer .content {
@@ -355,128 +365,10 @@
     }
 
     /*** Desktops ***/
-    @media only screen and (min-width: 1200px) {
-      body {
-        width: 100vw;
-        font-size: 2.5rem;
-      }
-
-      a img {
-        width: 250px;
-        height: 250px;
-      }
-
-      .bubble {
-        border-width: 1.5rem;
-      }
-
-      .deco>div {
-        border-width: 1rem;
-      }
-
-      .bubble:before {
-        bottom: -100px;
-        height: 100px;
-        width: 90px;
-      }
-
-      .bubble.right:before {
-        box-shadow:
-          0px -1.5rem 0 0 var(--border-color) inset,
-          40px 0 0 0 #fff inset,
-          40px -1.5rem 0 0 var(--border-color) inset;
-      }
-
-      header img {
-        height: auto;
-        width: 100%;
-      }
-
-      main {
-        width: 100%;
-      }
-
-      main .snail {
-        width: 500px;
-        margin-top: -80px;
-        margin-right: -175px;
-      }
-
-      footer .content {
-        width: 90%;
-      }
-
-      footer .content img {
-        height: 2.5rem;
-        margin-right: 1rem;
-      }
-
-      #debug:before {
-        content: "desktop"
-      }
-    }
+    @media only screen and (min-width: 1200px) {}
 
     /*** Ultra-wide ***/
-    @media only screen and (min-width: 1201px) {
-      body {
-        width: 100vw;
-        font-size: 2.5rem;
-      }
-
-      a img {
-        width: 250px;
-        height: 250px;
-      }
-
-      .bubble {
-        border-width: 1.5rem;
-      }
-
-      .deco>div {
-        border-width: 1rem;
-      }
-
-      .bubble:before {
-        bottom: -100px;
-        height: 100px;
-        width: 90px;
-      }
-
-      .bubble.right:before {
-        box-shadow:
-          0px -1.5rem 0 0 var(--border-color) inset,
-          40px 0 0 0 #fff inset,
-          40px -1.5rem 0 0 var(--border-color) inset;
-      }
-
-      header img {
-        height: auto;
-        width: 100%;
-      }
-
-      main {
-        width: 100%;
-      }
-
-      main .snail {
-        width: 500px;
-        margin-top: -80px;
-        margin-right: -175px;
-      }
-
-      footer .content {
-        width: 90%;
-      }
-
-      footer .content img {
-        height: 2.5rem;
-        margin-right: 1rem;
-      }
-
-      #debug:before {
-        content: "ultra-wide"
-      }
-    }
+    @media only screen and (min-width: 1201px) {}
   </style>
 </head>
 
@@ -540,7 +432,9 @@
       <div class="horz" style="align-items: center;">
         <img src="static/email.png" />
         <p>Reach me at
-          <a href="mailto:lil.lemon.snails@gmail.com">lil.lemon.snails@gmail.com</a>
+          <a href="mailto:lil.lemon.snails@gmail.com">
+            lil.lemon.snails@gmail.com
+          </a>
         </p>
       </div>
       <p style="margin-top: 0">Copyright 2025 @ Salem Preusser</p>
@@ -551,7 +445,7 @@
         sure the styles you want to be applied are actually the ones being
         applied.
       -->
-      <!-- <div id="debug"></div> -->
+      <div id="debug"></div>
     </div>
   </footer>
 </body>
