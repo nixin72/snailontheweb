@@ -114,7 +114,7 @@
      * *************************************************************************
      */
     html {
-      background: var(--bg-body);
+      /* background: var(--bg-body); */
       display: flex;
       flex-direction: column;
       width: 100%;
@@ -128,7 +128,7 @@
       margin: 0;
       height: 100vh;
       align-self: center;
-      background: var(--bg-body);
+      /* background: var(--bg-body); */
       width: 100vw;
       font-size: 1.3rem;
       overflow-x: hidden;
@@ -140,13 +140,14 @@
     }
 
     main {
-      margin: 1rem;
+      padding: 1rem;
       width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       align-self: center;
+      background-color: var(--bg-body);
     }
 
     a img {
@@ -176,6 +177,11 @@
 
     main .links>div {
       margin: 0 0.75rem;
+    }
+
+    main nav {
+      display: flex;
+      flex-direction: column;
     }
 
     main nav a {
@@ -304,12 +310,8 @@
         font-size: 2rem;
       }
 
-      a img {
-        width: 125px;
-        height: 125px;
-      }
-
       .bubble {
+        padding: 50px 50px;
         border-width: 1.0rem;
       }
 
@@ -318,8 +320,8 @@
       }
 
       .bubble:before {
-        bottom: -100px;
-        height: 100px;
+        bottom: -90px;
+        height: 90px;
         width: 90px;
       }
 
@@ -337,17 +339,32 @@
 
       header img {
         height: auto;
-        width: 50%;
+        width: 55%;
       }
 
       main {
         width: 100%;
+        padding: 2% 0;
+      }
+
+      main .links {
+        width: 55%;
+      }
+
+      a img {
+        width: 50%;
+        aspect-ratio: 1;
+      }
+
+      main nav {
+        flex-direction: row;
+        flex-flow: row;
       }
 
       main .snail {
-        width: 400px;
-        margin-top: -30px;
-        margin-right: -225px;
+        width: 450px;
+        margin-top: -25px;
+        margin-right: -575px;
       }
 
       footer .content {
@@ -397,8 +414,8 @@
         class="..."
         Those affect large portions of what this part of the page looks like
       -->
-      <div>
-        <nav class="bubble right vert drawn" style="align-items: center;">
+      <div class="bubble right vert drawn">
+        <nav>
           <a href="https://www.instagram.com/lil.lemon.snails/">
             <img src="static/ig.png" />
           </a>
